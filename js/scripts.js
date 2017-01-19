@@ -1,25 +1,12 @@
-// backend
-var vowels = ["a", "A","e","E", "i", "I", "o", "O", "u", "U"];
-// var split = word.toString().split("");
+var isLatin = function(word) {
+	return isNaN(word);
+}
 
-var inLatin = function(word) {
-  if (isNaN(word)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-
-
-
-
-$(document).ready(function(){
-  $("#english").submit(function(event){
-    event.preventDefault();
-    var theWordInEnglish = $("#string").val();
-    var result = inLatin(theWordInEnglish);
+$(document).ready(function() {
+	$("#english").submit(function(event) {
+  	event.preventDefault();
+    var word = $("#string").val();
+    var result = isLatin(word);
     $("#pig").text(result);
-
   });
 });
